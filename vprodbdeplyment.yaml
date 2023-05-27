@@ -8,13 +8,11 @@ spec:
   selector:
     matchLabels:
       app: vprodb
-
   replicas: 1
   template:
     metadata:
       labels:
         app: vprodb
-
     spec:
       containers:
         - name: vprodb
@@ -25,8 +23,8 @@ spec:
             - mountPath: /var/lib/mysql
               name: vpro-db-data
           ports:
-          - name: vprodb-port
-            containerPort: 3306
+            - name: vprodb-port
+              containerPort: 3306
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
